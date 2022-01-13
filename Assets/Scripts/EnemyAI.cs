@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-[ExecuteAlways]
-public class helloWorld : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
+
+    [SerializeField] Transform target;
+    NavMeshAgent navMeshAgent;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        print("ello allo");
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
